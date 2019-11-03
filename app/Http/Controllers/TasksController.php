@@ -75,10 +75,6 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        $this->validate($request, [
-            'status' => 'required|max:10',
-        ]);
-        
         $task = Task::find($id);
 
         return view('tasks.edit', [
