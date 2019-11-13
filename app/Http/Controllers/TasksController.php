@@ -37,11 +37,8 @@ class TasksController extends Controller
     public function create()
     {
         $task = new Task;
-        if (\Auth::id() === $task->user_id) {
-            return view('tasks.create', ['task' => $task,]);
-        }else{
-            return redirect('/');
-        }
+        return view('tasks.create', ['task' => $task,]);
+        
     }
 
     /**
